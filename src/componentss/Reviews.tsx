@@ -161,11 +161,11 @@ export function Reviews() {
       <img
         aria-hidden="true"
         src="/users/what-people-are-buying.png"
-        className="absolute select-none hidden xl:block
-          -left-32 top-1/3"
+        className="absolute w-28 left-0 -top-20  hidden lg:block"
       />
 
       <ReviewGrid />
     </MaxWidthWrapper>
   );
 }
+/*absolute select-none hidden xl:block-left-32 top-1/3 */
