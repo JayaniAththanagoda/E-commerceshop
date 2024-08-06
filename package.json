@@ -5,12 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-     "homepage": "https://JayaniAththanagoda.github.io/e-commerceshop",
+     
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-
+   
     
   },
   "dependencies": {
