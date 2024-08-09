@@ -36,7 +36,7 @@ function ReviewColumn({
   msperPixel = 0,
 }: {
   reviews: string[];
-  className: string;
+  className?: string;
   reviewClassName?: (reviewIndex: number) => string;
   msperPixel?: number;
 }) {
@@ -110,10 +110,10 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
 function ReviewGrid() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
-  const colomns = splitArray(PHONES, 3);
-  const column1 = colomns[0];
-  const column2 = colomns[1];
-  const column3 = splitArray(colomns[2], 2);
+  const columns = splitArray(PHONES, 3);
+  const column1 = columns[0];
+  const column2 = columns[1];
+  const column3 = splitArray(columns[2], 2);
 
   return (
     <div
