@@ -9,6 +9,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Footer from "@/componentss/Footer";
 import page from "./configure/upload/page";
 
+
 export default function Home() {
   return (
     <div className="bg-slate-50 ">
