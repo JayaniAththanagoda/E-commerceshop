@@ -1,5 +1,11 @@
+"use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { px } from "framer-motion";
 import NextImage from "next/image";
+import { cn } from "@/lib/utils";
+import { Rnd } from "react-rnd";
+import HandleComponent from "@/componentss/HanddleComponent";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -31,11 +37,57 @@ const DesignConfigurator = ({
             <NextImage
               fill
               alt="phone image"
-              src="/phone-template (1).png"
+              src="/phone-template.png"
               className="pointer-events-none z-50 select-none"
             />
           </AspectRatio>
+          <div
+            className="absolute z-40 inset-0 left-[3px] top-px 
+          right-[3px] bottom-px rounded-[32px] 
+          shadow-[0_0_0_99999px_rgba(229,231,235,0.6)]"
+          />
+          <div
+            className={cn(
+              "absolute inset-0 left-[3px] top-px right-[3px] bottom-pxrounded-[32px]",
+              `bg-zinc-950`
+            )}
+          />
         </div>
+        <Rnd
+          default={{
+            x: 150,
+            y: 250,
+            height: imageDimensions.height / 4,
+            width: imageDimensions.width / 4,
+          }}
+          className="absolute z-20 border-[3px] border-primary"
+          lockAspectRatio
+          resizeHandleComponent={{
+            bottomRight: <HandleComponent />,
+            bottomLeft: <HandleComponent />,
+            topRight: <HandleComponent />,
+            topLeft: <HandleComponent />,
+          }}
+        >
+          <div className="relative w-full h-full ">
+            <NextImage
+              src={imageUrl}
+              fill
+              alt="your image"
+              className="pointer-events-none"
+            />
+          </div>
+        </Rnd>
+      </div>
+      <div className="h-[37.5rem] flex flex-col bg-white">
+        <ScrollArea className="relative flex-1 overflow-auto">
+          <div
+            aria-hidden="true"
+            className="absolute z-10 inset-x-0 bottom-0 
+          h-12 bg-gradient-to-t from-white pointer-events-none"
+          />
+          <div></div>
+        </ScrollArea>
       </div>
     </div>
   );
