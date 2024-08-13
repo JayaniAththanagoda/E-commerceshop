@@ -24,6 +24,7 @@ const page = async ({ searchParams }: pageProps) => {
     return notFound();
   }
   const { imageUrl, width, height } = configuration;
+  
 
   return (
     <DesignConfigurator

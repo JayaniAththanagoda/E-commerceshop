@@ -4,7 +4,7 @@ import { px } from "framer-motion";
 import NextImage from "next/image";
 import { cn } from "@/lib/utils";
 import { Rnd } from "react-rnd";
-import HandleComponent from "@/componentss/HanddleComponent";
+import HandleComponent from "@/componentss/HandleComponent";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 interface DesignConfiguratorProps {
@@ -19,7 +19,7 @@ const DesignConfigurator = ({
   imageDimensions,
 }: DesignConfiguratorProps) => {
   return (
-    <div className="relative mt-20 grid grid-cols-3 mb-20 pb-20">
+    <div className="relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20">
       <div
         className="relative h-[37.5rem] overflow-hidden col-span-2 w-full 
         max-w-4xl flex items-center justify-center rounded-lg border-2 
@@ -31,6 +31,7 @@ const DesignConfigurator = ({
             aspect-[896/1831]"
         >
           <AspectRatio
+           
             ratio={896 / 1831}
             className="pointer-events-none relative z-50 aspect-[896/1831] w-full"
           >
@@ -48,7 +49,7 @@ const DesignConfigurator = ({
           />
           <div
             className={cn(
-              "absolute inset-0 left-[3px] top-px right-[3px] bottom-pxrounded-[32px]",
+              "absolute inset-0 left-[3px] top-px right-[3px] bottom-px rounded-[32px]",
               `bg-zinc-950`
             )}
           />
@@ -56,7 +57,7 @@ const DesignConfigurator = ({
         <Rnd
           default={{
             x: 150,
-            y: 250,
+            y: 205,
             height: imageDimensions.height / 4,
             width: imageDimensions.width / 4,
           }}
@@ -79,7 +80,7 @@ const DesignConfigurator = ({
           </div>
         </Rnd>
       </div>
-      <div className="h-[37.5rem] flex flex-col bg-white">
+      <div className="h-[37.5rem] w-full col-span-full lg:col-span-1 flex flex-col bg-white">
         <ScrollArea className="relative flex-1 overflow-auto">
           <div
             aria-hidden="true"

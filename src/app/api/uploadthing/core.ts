@@ -10,7 +10,7 @@ const f = createUploadthing();
 export const ourFileRouter = {
 
   imageUploader: f({ image: { maxFileSize: "4MB" } })
-    .input(z.object({configId: z.string().optional()}))
+    .input(z.object({configId: z.string().optional() }))
     .middleware(async ({ input}) => {
       return {input}
      
@@ -44,7 +44,7 @@ export const ourFileRouter = {
             croppedImageUrl : file.url,
           },
         })
-        return {configId: updatedConfiguration.id}
+        return {configId: updatedConfiguration.id }
       }   
     }),
 } satisfies FileRouter;
