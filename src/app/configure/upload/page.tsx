@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { Progress } from "@/components/ui/progress";
-<Progress value={33} />;
 
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { useState, useTransition } from "react";
@@ -13,11 +12,10 @@ import { start } from "repl";
 import { useToast } from "@/components/ui/use-toast";
 import { Toast } from "@/components/ui/toast";
 
-
 const page = () => {
   const { toast } = useToast();
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const [uploadprogress, setUploadProgress] = useState<number>(0);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
   const router = useRouter();
 
   const { startUpload, isUploading } = useUploadThing("imageUploader", {
@@ -105,13 +103,11 @@ const page = () => {
                 ) : isDragOver ? (
                   <p>
                     <span className="font-semibold">Drop file</span>
-                    {""}
                     to upload
                   </p>
                 ) : (
                   <p>
                     <span className="font-semibold">Click to upload</span>
-                    {""}
                     or drag and drop
                   </p>
                 )}

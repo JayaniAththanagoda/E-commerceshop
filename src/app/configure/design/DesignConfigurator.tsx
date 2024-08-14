@@ -31,7 +31,6 @@ const DesignConfigurator = ({
             aspect-[896/1831]"
         >
           <AspectRatio
-           
             ratio={896 / 1831}
             className="pointer-events-none relative z-50 aspect-[896/1831] w-full"
           >
