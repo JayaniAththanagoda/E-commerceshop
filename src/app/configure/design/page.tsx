@@ -1,30 +1,29 @@
-import { notFound } from "next/navigation";
-import DesignConfigurator from "./DesignConfigurator";
-import {db} from "@/db"
+import { db } from '@/db'
+import { notFound } from 'next/navigation'
+import DesignConfigurator from './DesignConfigurator'
 
-
-
-interface pageProps {
+interface PageProps {
   searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
+    [key: string]: string | string[] | undefined
+  }
 }
 
-const page = async ({ searchParams }: pageProps) => {
-  const { id } = searchParams;
+const Page = async ({ searchParams }: PageProps) => {
+  const { id } = searchParams
 
-  if (!id || typeof id !== "string") {
-    return notFound();
+  if (!id || typeof id !== 'string') {
+    return notFound()
   }
 
   const configuration = await db.configuration.findUnique({
     where: { id },
-  });
-  if (!configuration) {
-    return notFound();
-  }
-  const { imageUrl, width, height } = configuration;
+  })
 
+  if (!configuration) {
+    return notFound()
+  }
+
+  const { imageUrl, width, height } = configuration
 
   return (
     <DesignConfigurator
@@ -32,6 +31,7 @@ const page = async ({ searchParams }: pageProps) => {
       imageDimensions={{ width, height }}
       imageUrl={imageUrl}
     />
-  );
-};
-export default page;
+  )
+}
+
+export default Page
