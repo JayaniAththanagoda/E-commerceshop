@@ -1,7 +1,3 @@
-import { createRouteHandler } from 'uploadthing/next'
+import {handleAuth} from "@kinde-oss/kinde-auth-nextjs/server";
 
-import { ourFileRouter } from './core'
-
-export const { GET, POST } = createRouteHandler({
-  router: ourFileRouter,
-})
+export const GET = handleAuth();
